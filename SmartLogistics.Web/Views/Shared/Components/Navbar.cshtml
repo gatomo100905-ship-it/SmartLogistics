@@ -1,0 +1,25 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-4 py-2 w-100">
+    <div class="container-fluid p-0">
+        <!-- Search -->
+        <form class="d-flex me-auto" style="width: 300px;">
+            <div class="input-group input-group-sm">
+                <input class="form-control bg-light border-0" type="search" placeholder="Tra cá»©u váº­n Ä‘Æ¡n, xe, kho...">
+                <button class="btn btn-light border-0 bg-light text-muted" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+
+        <div class="d-flex align-items-center gap-2">
+            <!-- Theme Toggle -->
+            @await Html.PartialAsync("Components/DarkModeToggle")
+            
+            <!-- Theme Switcher -->
+            @await Html.PartialAsync("Components/ThemeSwitcher")
+            
+            <!-- Language Switcher -->
+            @await Html.PartialAsync("Components/LanguageSwitcher")
+            
+            <!-- Notifications -->
+            @await Html.PartialAsync("Components/Notification")
+        </div>
+    </div>
+</nav>
