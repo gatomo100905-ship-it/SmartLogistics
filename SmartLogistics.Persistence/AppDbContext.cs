@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SmartLogistics.Domain.Entities.Identity;
 using SmartLogistics.Domain.Entities.Warehouse;
 using SmartLogistics.Domain.Entities.Order;
@@ -9,9 +9,9 @@ using SmartLogistics.Domain.Entities.CRM;
 
 namespace SmartLogistics.Persistence
 {
-    public class ApplicationDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
@@ -81,3 +81,4 @@ namespace SmartLogistics.Persistence
         }
     }
 }
+
