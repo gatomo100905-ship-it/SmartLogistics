@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SmartLogistics.Domain.Entities.Identity;
 using SmartLogistics.Domain.Entities.Warehouse;
 using SmartLogistics.Domain.Entities.Order;
@@ -75,9 +75,17 @@ namespace SmartLogistics.Persistence
         {
             base.OnModelCreating(modelBuilder);
             
-            // Apply configurations if needed
-            // For example:
-            // modelBuilder.Entity<Order>().HasIndex(o => o.OrderNumber).IsUnique();
+            // Seed system roles
+            foreach (var roleName in SmartLogistics.Domain.Constants.Roles.All)
+            {
+                modelBuilder.Entity<ApplicationRole>().HasData(new ApplicationRole
+                {
+                    Id = SmartLogistics.Domain.Constants.Roles.RoleIds[roleName],
+                    Name = roleName,
+                    Description = $"{roleName} system role",
+                    IsSystemRole = true
+                });
+            }
         }
     }
 }
