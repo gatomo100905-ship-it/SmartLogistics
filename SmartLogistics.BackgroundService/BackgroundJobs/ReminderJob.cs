@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,12 @@ namespace SmartLogistics.BackgroundService.BackgroundJobs
 
         public async Task RunAsync()
         {
-            _logger.LogInformation("ReminderJob: QuĂ©t danh sĂ¡ch hĂ³a Ä‘Æ¡n quĂ¡ háº¡n vĂ  lá»‹ch báº£o trĂ¬ xe lĂºc {time}...", DateTime.UtcNow);
+            _logger.LogInformation("ReminderJob: Quét danh sách hóa đơn quá hạn và lịch bảo trì xe lúc {time}...", DateTime.UtcNow);
             
-            // Giáº£ láº­p tĂ¬m kiáº¿m cĂ´ng ná»£ chÆ°a tráº£ vĂ  xe sáº¯p Ä‘áº¿n má»‘c thay dáº§u báº£o dÆ°á»¡ng
+            // Giả lập tìm kiếm công nợ chưa trả và xe sắp đến mốc thay dầu bảo dưỡng
             await Task.Delay(800);
 
-            _logger.LogInformation("ReminderJob: ÄĂ£ gá»­i 5 nháº¯c nhá»Ÿ cĂ´ng ná»£ khĂ¡ch hĂ ng vĂ  2 lá»‹ch cáº£nh bĂ¡o báº£o trĂ¬ phÆ°Æ¡ng tiá»‡n.");
+            _logger.LogInformation("ReminderJob: Đã gửi 5 nhắc nhở công nợ khách hàng và 2 lịch cảnh báo bảo trì phương tiện.");
         }
     }
 }

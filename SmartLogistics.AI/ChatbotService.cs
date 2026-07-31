@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 
 namespace SmartLogistics.AI
 {
@@ -8,11 +8,11 @@ namespace SmartLogistics.AI
         {
             await Task.Delay(150); // Simulate OpenAI API request
             // Mock response
-            if (prompt.ToLower().Contains("delay") || prompt.ToLower().Contains("trá»…"))
+            if (prompt.ToLower().Contains("delay") || prompt.ToLower().Contains("trễ"))
             {
-                return "AI: Chuyáº¿n Ä‘i #TR-881 Ä‘ang trá»… khoáº£ng 20 phĂºt do máº­t Ä‘á»™ giao thĂ´ng tÄƒng táº¡i Quá»‘c lá»™ 1A.";
+                return "AI: Chuyến đi #TR-881 đang trễ khoảng 20 phút do mật độ giao thông tăng tại Quốc lộ 1A.";
             }
-            return $"AI: TĂ´i Ä‘Ă£ ghi nháº­n yĂªu cáº§u cá»§a báº¡n vá» '{prompt}' trong ngá»¯ cáº£nh '{context}'. TĂ´i cĂ³ thá»ƒ giĂºp gĂ¬ thĂªm cho báº¡n?";
+            return $"AI: Tôi đã ghi nhận yêu cầu của bạn về '{prompt}' trong ngữ cảnh '{context}'. Tôi có thể giúp gì thêm cho bạn?";
         }
     }
 }

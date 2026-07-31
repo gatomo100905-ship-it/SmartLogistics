@@ -1,30 +1,22 @@
-﻿<div class="dropdown">
-    <button class="btn btn-light btn-sm dropdown-toggle border-0" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        đŸ¨ Chá»§ Ä‘á»
+<div class="dropdown">
+    <button class="btn btn-light btn-sm border-0 dropdown-toggle" type="button" id="dropdownTheme" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-palette"></i> Chủ đề
     </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="themeDropdown">
-        <li><a class="dropdown-item fs-7" href="#" onclick="changeTheme('default')">đŸ”µ Classic Blue</a></li>
-        <li><a class="dropdown-item fs-7" href="#" onclick="changeTheme('deep-blue')">đŸŒŒ Deep Blue (Ocean)</a></li>
-        <li><a class="dropdown-item fs-7" href="#" onclick="changeTheme('emerald')">đŸŸ¢ Emerald (Green)</a></li>
+    <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownTheme" style="font-size: 0.8rem;">
+        <li><a class="dropdown-item" href="#" onclick="changeTheme('default')">Mặc định (Indigo)</a></li>
+        <li><a class="dropdown-item" href="#" onclick="changeTheme('emerald')">Ngọc lục bảo (Emerald)</a></li>
+        <li><a class="dropdown-item" href="#" onclick="changeTheme('sunset')">Hoàng hôn (Orange)</a></li>
     </ul>
 </div>
 
 <script>
     function changeTheme(themeName) {
-        document.body.className = document.body.className.replace(/\btheme-\S+/g, '');
-        if (themeName !== 'default') {
-            document.body.classList.add('theme-' + themeName);
-        }
+        document.documentElement.setAttribute("data-theme", themeName);
         localStorage.setItem("color-theme", themeName);
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var savedTheme = localStorage.getItem("color-theme") || "default";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    });
 </script>
-<style>
-    body.theme-deep-blue {
-        --bs-primary: #0f172a;
-        --bs-primary-rgb: 15, 23, 42;
-    }
-    body.theme-emerald {
-        --bs-primary: #059669;
-        --bs-primary-rgb: 5, 150, 105;
-    }
-</style>

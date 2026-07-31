@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,12 @@ namespace SmartLogistics.BackgroundService.BackgroundJobs
 
         public async Task RunAsync()
         {
-            _logger.LogInformation("NotificationJob: Xá»­ lĂ½ hĂ ng Ä‘á»£i tin nháº¯n/thĂ´ng bĂ¡o há»‡ thá»‘ng lĂºc {time}...", DateTime.UtcNow);
+            _logger.LogInformation("NotificationJob: Xử lý hàng đợi tin nhắn/thông báo hệ thống lúc {time}...", DateTime.UtcNow);
             
-            // Giáº£ láº­p gá»­i SMS/Firebase push notification hĂ ng loáº¡t
+            // Giả lập gửi SMS/Firebase push notification hàng loạt
             await Task.Delay(500);
 
-            _logger.LogInformation("NotificationJob: Giáº£i phĂ³ng hĂ ng Ä‘á»£i thĂ´ng bĂ¡o thĂ nh cĂ´ng.");
+            _logger.LogInformation("NotificationJob: Giải phóng hàng đợi thông báo thành công.");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,12 @@ namespace SmartLogistics.BackgroundService.BackgroundJobs
 
         public async Task RunAsync()
         {
-            _logger.LogInformation("DailyReportJob: Báº¯t Ä‘áº§u tá»•ng há»£p bĂ¡o cĂ¡o váº­n hĂ nh cuá»‘i ngĂ y lĂºc {time}...", DateTime.UtcNow);
+            _logger.LogInformation("DailyReportJob: Bắt đầu tổng hợp báo cáo vận hành cuối ngày lúc {time}...", DateTime.UtcNow);
             
-            // Giáº£ láº­p tá»•ng há»£p sá»‘ liá»‡u Ä‘Æ¡n hĂ ng vĂ  doanh thu trong ngĂ y
+            // Giả lập tổng hợp số liệu đơn hàng và doanh thu trong ngày
             await Task.Delay(1000); 
 
-            _logger.LogInformation("DailyReportJob: Káº¿t xuáº¥t bĂ¡o cĂ¡o hoĂ n táº¥t. ÄĂ£ lÆ°u file DailyReport_{date}.pdf", DateTime.UtcNow.ToString("yyyyMMdd"));
+            _logger.LogInformation("DailyReportJob: Kết xuất báo cáo hoàn tất. Đã lưu file DailyReport_{date}.pdf", DateTime.UtcNow.ToString("yyyyMMdd"));
         }
     }
 }

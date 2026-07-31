@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,12 @@ namespace SmartLogistics.BackgroundService.BackgroundJobs
 
         public async Task RunAsync()
         {
-            _logger.LogInformation("BackupJob: Báº¯t Ä‘áº§u sao lÆ°u Ä‘á»‹nh ká»³ cÆ¡ sá»Ÿ dá»¯ liá»‡u há»‡ thá»‘ng lĂºc {time}...", DateTime.UtcNow);
+            _logger.LogInformation("BackupJob: Bắt đầu sao lưu định kỳ cơ sở dữ liệu hệ thống lúc {time}...", DateTime.UtcNow);
             
-            // Giáº£ láº­p nĂ©n DB SQL Server vĂ  Ä‘áº©y báº£n backup lĂªn lÆ°u trá»¯ Ä‘Ă¡m mĂ¢y an toĂ n
+            // Giả lập nén DB SQL Server và đẩy bản backup lên lưu trữ đám mây an toàn
             await Task.Delay(3000);
 
-            _logger.LogInformation("BackupJob: Backup thĂ nh cĂ´ng. ÄĂ£ lÆ°u trá»¯ file SmartLogistics_Backup_{date}.bak.", DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"));
+            _logger.LogInformation("BackupJob: Backup thành công. Đã lưu trữ file SmartLogistics_Backup_{date}.bak.", DateTime.UtcNow.ToString("yyyyMMdd_HHmmss"));
         }
     }
 }

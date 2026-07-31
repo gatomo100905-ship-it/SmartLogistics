@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,12 @@ namespace SmartLogistics.BackgroundService.BackgroundJobs
 
         public async Task RunAsync()
         {
-            _logger.LogInformation("WeeklyReportJob: Báº¯t Ä‘áº§u tĂ­nh toĂ¡n hiá»‡u suáº¥t tuáº§n lĂºc {time}...", DateTime.UtcNow);
+            _logger.LogInformation("WeeklyReportJob: Bắt đầu tính toán hiệu suất tuần lúc {time}...", DateTime.UtcNow);
             
-            // Giáº£ láº­p tá»•ng há»£p KPI tĂ i xáº¿, tá»· lá»‡ giao hĂ ng Ä‘Ăºng giá» (On-Time Delivery Rate)
+            // Giả lập tổng hợp KPI tài xế, tỷ lệ giao hàng đúng giờ (On-Time Delivery Rate)
             await Task.Delay(2000);
 
-            _logger.LogInformation("WeeklyReportJob: HoĂ n táº¥t bĂ¡o cĂ¡o tuáº§n. ÄĂ£ gá»­i email tá»•ng há»£p cho Ban giĂ¡m Ä‘á»‘c.");
+            _logger.LogInformation("WeeklyReportJob: Hoàn tất báo cáo tuần. Đã gửi email tổng hợp cho Ban giám đốc.");
         }
     }
 }
