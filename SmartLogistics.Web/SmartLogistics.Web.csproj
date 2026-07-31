@@ -4,6 +4,8 @@
     <ProjectReference Include="..\SmartLogistics.Application\SmartLogistics.Application.csproj" />
     <ProjectReference Include="..\SmartLogistics.Persistence\SmartLogistics.Persistence.csproj" />
     <ProjectReference Include="..\SmartLogistics.Infrastructure\SmartLogistics.Infrastructure.csproj" />
+    <ProjectReference Include="..\SmartLogistics.SignalR\SmartLogistics.SignalR.csproj" />
+    <ProjectReference Include="..\SmartLogistics.AI\SmartLogistics.AI.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

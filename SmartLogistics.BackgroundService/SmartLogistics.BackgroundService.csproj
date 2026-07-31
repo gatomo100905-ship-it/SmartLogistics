@@ -1,21 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-SmartLogistics.BackgroundService-fb3b642e-cbe7-4899-80c8-f89c0738c205</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SmartLogistics.Application\SmartLogistics.Application.csproj" />
     <ProjectReference Include="..\SmartLogistics.Persistence\SmartLogistics.Persistence.csproj" />
     <ProjectReference Include="..\SmartLogistics.Infrastructure\SmartLogistics.Infrastructure.csproj" />
-    <ProjectReference Include="..\SmartLogistics.SignalR\SmartLogistics.SignalR.csproj" />
-    <ProjectReference Include="..\SmartLogistics.AI\SmartLogistics.AI.csproj" />
   </ItemGroup>
-
 </Project>

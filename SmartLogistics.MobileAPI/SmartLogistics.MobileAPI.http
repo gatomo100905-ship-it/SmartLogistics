@@ -1,0 +1,6 @@
+@SmartLogistics.MobileAPI_HostAddress = http://localhost:5103
+
+GET {{SmartLogistics.MobileAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
