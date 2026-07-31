@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="SmartLogistics.API/SmartLogistics.API.csproj" />
+  <Project Path="SmartLogistics.Application/SmartLogistics.Application.csproj" />
+  <Project Path="SmartLogistics.Common/SmartLogistics.Common.csproj" />
+  <Project Path="SmartLogistics.Domain/SmartLogistics.Domain.csproj" />
+  <Project Path="SmartLogistics.Infrastructure/SmartLogistics.Infrastructure.csproj" />
+  <Project Path="SmartLogistics.Persistence/SmartLogistics.Persistence.csproj" />
+  <Project Path="SmartLogistics.Tests/SmartLogistics.Tests.csproj" />
+  <Project Path="SmartLogistics.Web/SmartLogistics.Web.csproj" />
+</Solution>
