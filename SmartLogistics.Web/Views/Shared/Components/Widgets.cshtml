@@ -1,32 +1,229 @@
-﻿<div class="row g-2">
-    <!-- Weather Widget -->
-    <div class="col-md-6">
-        <div class="card border-0 shadow-sm bg-light">
-            <div class="card-body py-3 d-flex justify-content-between align-items-center">
-                <div>
-                    <h6 class="mb-0 fw-bold">HĂ  Ná»™i</h6>
-                    <span class="fs-8 text-muted">Trá»i mÆ°a lá»›n</span>
+﻿<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<div class="row g-3">
+    <!-- Row 1: Financial Cards -->
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fs-8 text-white-50">DOANH THU THĂNG</span>
+                        <h3 class="mb-0 fw-bold mt-1">1.200MÄ‘</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-2 rounded">
+                        <i class="bi bi-wallet2 fs-4"></i>
+                    </div>
                 </div>
-                <div class="text-end">
-                    <h5 class="mb-0 text-primary">28Â°C</h5>
-                    <i class="bi bi-cloud-rain text-primary fs-5"></i>
+                <div class="mt-2 fs-8 text-white-50">
+                    <span class="text-white fw-bold"><i class="bi bi-arrow-up"></i> +12.5%</span> so vá»›i thĂ¡ng trÆ°á»›c
                 </div>
             </div>
         </div>
     </div>
-    <!-- Fuel Price Widget -->
-    <div class="col-md-6">
-        <div class="card border-0 shadow-sm bg-light">
-            <div class="card-body py-3 d-flex justify-content-between align-items-center">
+    
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fs-8 text-white-50">CHI PHĂ Váº¬N HĂ€NH</span>
+                        <h3 class="mb-0 fw-bold mt-1">320MÄ‘</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-2 rounded">
+                        <i class="bi bi-credit-card fs-4"></i>
+                    </div>
+                </div>
+                <div class="mt-2 fs-8 text-white-50">
+                    <span class="text-white fw-bold"><i class="bi bi-arrow-down"></i> -4.2%</span> giáº£m nhá» tá»‘i Æ°u xÄƒng
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fs-8 text-white-50">Lá»¢I NHUáº¬N RĂ’NG</span>
+                        <h3 class="mb-0 fw-bold mt-1">880MÄ‘</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-2 rounded">
+                        <i class="bi bi-graph-up-arrow fs-4"></i>
+                    </div>
+                </div>
+                <div class="mt-2 fs-8 text-white-50">
+                    <span class="text-white fw-bold"><i class="bi bi-arrow-up"></i> +18.7%</span> vÆ°á»£t chá»‰ tiĂªu thĂ¡ng
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fs-8 text-white-50">DĂ’NG TIá»€N (CASH FLOW)</span>
+                        <h3 class="mb-0 fw-bold mt-1">+940MÄ‘</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-2 rounded">
+                        <i class="bi bi-cash-stack fs-4"></i>
+                    </div>
+                </div>
+                <div class="mt-2 fs-8 text-white-50">
+                    <span class="text-white fw-bold">An toĂ n</span> há»‡ sá»‘ thanh toĂ¡n 2.8
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Warehouse, Fleet & Fuel -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3"><i class="bi bi-house-door text-primary"></i> Dung LÆ°á»£ng Kho BĂ£i</h6>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h4 class="mb-0 fw-bold text-dark">75%</h4>
+                        <span class="fs-8 text-muted">Äang sá»­ dá»¥ng: 7,500mÂ³</span>
+                    </div>
+                    <svg width="80" height="80" class="me-2">
+                        <circle cx="40" cy="40" r="32" stroke="#e2e8f0" stroke-width="8" fill="transparent" />
+                        <circle cx="40" cy="40" r="32" stroke="#2563eb" stroke-width="8" fill="transparent"
+                                stroke-dasharray="201" stroke-dashoffset="50" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="mt-3">
+                    <div class="d-flex justify-content-between fs-8 text-muted mb-1">
+                        <span>Kho A (HĂ  Ná»™i): 85%</span>
+                        <span>Kho B (HCM): 65%</span>
+                    </div>
+                    <div class="progress" style="height: 6px;">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3"><i class="bi bi-truck text-success"></i> Hiá»‡u Suáº¥t Váº­n Chuyá»ƒn</h6>
+                <div class="row">
+                    <div class="col-6 border-end text-center">
+                        <span class="fs-8 text-muted">ÄĂºng Háº¡n (On-time)</span>
+                        <h4 class="fw-bold text-success mt-1">96.8%</h4>
+                        <span class="fs-9 text-success"><i class="bi bi-caret-up-fill"></i> +1.2%</span>
+                    </div>
+                    <div class="col-6 text-center">
+                        <span class="fs-8 text-muted">Giao Trá»… (Delay)</span>
+                        <h4 class="fw-bold text-danger mt-1">3.2%</h4>
+                        <span class="fs-9 text-success"><i class="bi bi-caret-down-fill"></i> -0.8%</span>
+                    </div>
+                </div>
+                <div class="mt-3 fs-8 text-muted bg-light p-2 rounded text-center">
+                    <i class="bi bi-info-circle text-primary"></i> 2 chuyáº¿n trá»… do mÆ°a bĂ£o táº¡i Miá»n Trung
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="fw-bold mb-2"><i class="bi bi-fuel-pump text-danger"></i> Chi PhĂ­ NhiĂªn Liá»‡u</h6>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div>
+                        <h4 class="mb-0 fw-bold">125.4 MÄ‘</h4>
+                        <span class="fs-8 text-muted">ThĂ¡ng nĂ y: 6,100 LĂ­t</span>
+                    </div>
+                    <span class="badge bg-danger-subtle text-danger">-2.4% so vá»›i thĂ¡ng trÆ°á»›c</span>
+                </div>
+                <svg viewBox="0 0 300 50" class="w-100" style="max-height: 40px;">
+                    <path d="M 0,40 L 50,35 L 100,45 L 150,25 L 200,30 L 250,15 L 300,10" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M 0,40 L 50,35 L 100,45 L 150,25 L 200,30 L 250,15 L 300,10 L 300,50 L 0,50 Z" fill="rgba(239, 68, 68, 0.1)"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: AI prediction & Real-time Map -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #1e1b4b, #311042); color: #fff;">
+            <div class="card-body d-flex flex-column justify-content-between">
                 <div>
-                    <h6 class="mb-0 fw-bold">GiĂ¡ dáº§u Diesel</h6>
-                    <span class="fs-8 text-muted">Cáº­p nháº­t Petrolimex</span>
+                    <h6 class="fw-bold mb-3 text-white-50"><i class="bi bi-cpu text-warning"></i> AI Prediction Insights</h6>
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-lightbulb-fill text-warning fs-4 me-3 mt-1"></i>
+                        <div>
+                            <span class="fs-8 text-white-50 d-block">Dá»° BĂO NHU Cáº¦U (DEMAND FORECAST)</span>
+                            <span class="fs-7 text-white">Sá»‘ lÆ°á»£ng Ä‘Æ¡n hĂ ng dá»± kiáº¿n tÄƒng <strong class="text-warning">+12%</strong> vĂ o 2 ngĂ y tiáº¿p theo. Äá» xuáº¥t tÄƒng cÆ°á»ng xe táº£i nháº¹ tuyáº¿n HĂ  Ná»™i - Háº£i PhĂ²ng.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-shield-exclamation text-info fs-4 me-3 mt-1"></i>
+                        <div>
+                            <span class="fs-8 text-white-50 d-block">Cáº¢NH BĂO Tá»’N KHO AN TOĂ€N</span>
+                            <span class="fs-7 text-white">SKU-BOX-M táº¡i Kho A sáº¯p cáº¡n. Äá» xuáº¥t nháº­p thĂªm <strong class="text-info">500 Ä‘Æ¡n vá»‹</strong> trÆ°á»›c ngĂ y 03/08.</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-end">
-                    <h5 class="mb-0 text-danger">20,500Ä‘</h5>
-                    <span class="fs-8 text-danger"><i class="bi bi-arrow-up-short"></i>+150Ä‘</span>
+                <div class="mt-3 pt-3 border-top border-white border-opacity-10 fs-8 text-white-50 text-end">
+                    <span>Äá»™ tin cáº­y mĂ´ hĂ¬nh: <strong>94.2%</strong></span>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="fw-bold mb-0"><i class="bi bi-map text-primary"></i> Báº£n Äá»“ GiĂ¡m SĂ¡t Thá»i Gian Thá»±c (Live Fleet Map)</h6>
+                    <span class="badge bg-success animate-pulse"><i class="bi bi-circle-fill fs-9 me-1"></i> Trá»±c tiáº¿p</span>
+                </div>
+                <div id="liveFleetMap" style="height: 250px; border-radius: 8px; border: 1px solid #e2e8f0; z-index: 1;"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map('liveFleetMap').setView([16.0471, 108.2062], 5);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        var locations = [
+            { name: "Xe Táº£i HN-182 (Äang giao hĂ ng)", lat: 21.0285, lng: 105.8542, type: "truck" },
+            { name: "Container HCM-991 (Váº­n chuyá»ƒn Báº¯c Nam)", lat: 10.8231, lng: 106.6297, type: "truck" },
+            { name: "Xe Táº£i DN-440 (Trung chuyá»ƒn ÄĂ  Náºµng)", lat: 16.0471, lng: 108.2062, type: "truck" }
+        ];
+
+        locations.forEach(function (loc) {
+            var marker = L.marker([loc.lat, loc.lng]).addTo(map);
+            marker.bindPopup("<b>" + loc.name + "</b><br>Tá»a Ä‘á»™: " + loc.lat + ", " + loc.lng);
+        });
+    });
+</script>
+
+<style>
+    .animate-pulse {
+        animation: pulse-animation 2s infinite;
+    }
+    @keyframes pulse-animation {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+    .fs-7 { font-size: 0.85rem; }
+    .fs-8 { font-size: 0.75rem; }
+    .fs-9 { font-size: 0.65rem; }
+</style>
