@@ -1,35 +1,66 @@
-﻿@{
-    ViewData["Title"] = "Theo dĂµi hĂ nh trĂ¬nh";
+@{
+    ViewData["Title"] = "Theo dõi GPS";
 }
-<div class="container py-4">
-    <h2 class="text-dark mb-4">GiĂ¡m SĂ¡t Váº­n ÄÆ¡n Thá»i Gian Thá»±c</h2>
-    <div class="row g-3">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Tra cá»©u hĂ nh trĂ¬nh</h5>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nháº­p mĂ£ váº­n Ä‘Æ¡n...">
-                        <button class="btn btn-primary" type="button">TĂ¬m</button>
-                    </div>
-                    <hr>
-                    <h6>Nháº­t kĂ½ di chuyá»ƒn (#SH-9831)</h6>
-                    <ul class="list-unstyled fs-7 ps-2 border-start border-primary border-2">
-                        <li class="mb-2"><strong>21:10</strong> - Rá»i kho trung chuyá»ƒn HĂ  Ná»™i</li>
-                        <li class="mb-2"><strong>18:30</strong> - HoĂ n thĂ nh kiá»ƒm Ä‘áº¿m & bá»‘c xáº¿p</li>
-                        <li><strong>15:00</strong> - Nháº­p kho HĂ  Ná»™i</li>
-                    </ul>
+
+<div class="row g-3">
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm p-4">
+            <h2 class="text-dark mb-1 font-weight-bold"><i class="bi bi-geo-alt text-primary me-2"></i>Giám Sát Vận Đơn Thời Gian Thực (Live GPS Tracking)</h2>
+            <p class="text-muted mb-0">Theo dõi lịch trình di chuyển, tốc độ và trạng thái hiện tại của xe giao hàng trên bản đồ số.</p>
+        </div>
+    </div>
+
+    <!-- Tracking Input -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3">Tra cứu Vận Đơn</h6>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="Nhập mã vận đơn (VD: SH-9831)...">
+                    <button class="btn btn-sm btn-primary">Tìm kiếm</button>
                 </div>
+                
+                <h6 class="fw-bold mb-2">Nhật ký di chuyển (#SH-9831)</h6>
+                <ul class="list-unstyled mb-0 fs-8 border-start ps-3" style="border-width: 2px !important; border-color: #e2e8f0 !important;">
+                    <li class="mb-3 position-relative">
+                        <i class="bi bi-check-circle-fill text-success position-absolute" style="left: -22px; background: white;"></i>
+                        <strong>18:30</strong> - Hoàn thành kiểm đếm & bốc xếp lên xe
+                    </li>
+                    <li class="position-relative">
+                        <i class="bi bi-check-circle-fill text-success position-absolute" style="left: -22px; background: white;"></i>
+                        <strong>15:00</strong> - Nhập kho Hà Nội
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="card border-0 shadow-sm bg-light text-center d-flex justify-content-center align-items-center" style="height: 400px;">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                    <p class="text-muted"><i class="bi bi-map fs-1"></i></p>
-                    <h5>Báº£n Ä‘á»“ giĂ¡m sĂ¡t GPS</h5>
-                    <p class="text-muted fs-7">Há»‡ thá»‘ng Ä‘ang giáº£ láº­p tĂ­ch há»£p vá»›i Google Maps API</p>
-                </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Bản Đồ Giám Sát GPS</h5>
+                <!-- Map container using Leaflet -->
+                <div id="trackingMap" style="height: 300px; border-radius: 8px; border: 1px solid #e2e8f0; z-index: 1;"></div>
             </div>
         </div>
     </div>
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map('trackingMap').setView([21.0285, 105.8542], 13); // Centered on Hanoi
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        L.marker([21.0285, 105.8542]).addTo(map)
+            .bindPopup("<b>Xe HN-182</b><br>Trạng thái: Đang dừng bốc hàng.")
+            .openPopup();
+    });
+</script>

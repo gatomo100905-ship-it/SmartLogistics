@@ -1,33 +1,82 @@
-﻿@{
-    ViewData["Title"] = "TĂ i chĂ­nh doanh nghiá»‡p";
+@{
+    ViewData["Title"] = "Quản lý Tài chính";
 }
-<div class="container py-4">
-    <h2 class="text-dark mb-4">Quáº£n LĂ½ TĂ i ChĂ­nh & DĂ²ng Tiá»n</h2>
-    <div class="row g-3 mb-4">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm bg-success text-white">
-                <div class="card-body">
-                    <h6>Doanh thu thĂ¡ng nĂ y</h6>
-                    <h3>1,200,000,000 VND</h3>
-                    <p class="mb-0 text-white-50 fs-7">TÄƒng 8.5% so vá»›i thĂ¡ng trÆ°á»›c</p>
-                </div>
+
+<div class="row g-3">
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm p-4">
+            <h2 class="text-dark mb-1 font-weight-bold"><i class="bi bi-wallet2 text-primary me-2"></i>Quản Lý Tài Chính & Dòng Tiền</h2>
+            <p class="text-muted mb-0">Hạch toán doanh thu, theo dõi các khoản chi phí phát sinh xăng dầu, bảo bảo dưỡng định kỳ và kiểm soát dòng tiền.</p>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm bg-success text-white">
+            <div class="card-body">
+                <h6>Doanh Thu Vận Tải</h6>
+                <h3>1.200Mđ</h3>
+                <span class="fs-8 text-white-50">Tháng này: +12.5%</span>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm bg-danger text-white">
-                <div class="card-body">
-                    <h6>Chi phĂ­ váº­n hĂ nh</h6>
-                    <h3>950,000,000 VND</h3>
-                    <p class="mb-0 text-white-50 fs-7">Chi phĂ­ xÄƒng dáº§u chiáº¿m 60%</p>
-                </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm bg-danger text-white">
+            <div class="card-body">
+                <h6>Chi Phí Vận Hành</h6>
+                <h3>320Mđ</h3>
+                <span class="fs-8 text-white-50">Chi phí xăng dầu chiếm 60%</span>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm bg-primary text-white">
-                <div class="card-body">
-                    <h6>Lá»£i nhuáº­n rĂ²ng</h6>
-                    <h3>250,000,000 VND</h3>
-                    <p class="mb-0 text-white-50 fs-7">Äáº¡t chá»‰ tiĂªu Ä‘á» ra</p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm bg-primary text-white">
+            <div class="card-body">
+                <h6>Lợi Nhuận Ròng</h6>
+                <h3>880Mđ</h3>
+                <span class="fs-8 text-white-50">Đạt chỉ tiêu đề ra</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Table -->
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold mb-3">Nhật Ký Giao Dịch Gần Đây</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0 fs-8">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Thời Gian</th>
+                                <th>Mã Giao Dịch</th>
+                                <th>Loại Giao Dịch</th>
+                                <th>Số Tiền</th>
+                                <th>Phương Thức</th>
+                                <th>Trạng Thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>31/07/2026 15:30</td>
+                                <td>TXN-99281</td>
+                                <td><span class="text-success"><i class="bi bi-plus-circle"></i> Thu: Vận chuyển samsung</span></td>
+                                <td class="fw-bold">45.000.000đ</td>
+                                <td>Chuyển khoản</td>
+                                <td><span class="badge bg-success">Hoàn tất</span></td>
+                            </tr>
+                            <tr>
+                                <td>31/07/2026 14:00</td>
+                                <td>TXN-88219</td>
+                                <td><span class="text-danger"><i class="bi bi-dash-circle"></i> Chi: Đổ dầu xe HN-182</span></td>
+                                <td class="fw-bold">1.650.000đ</td>
+                                <td>Tiền mặt</td>
+                                <td><span class="badge bg-success">Hoàn tất</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

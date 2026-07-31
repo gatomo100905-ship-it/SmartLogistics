@@ -1,26 +1,76 @@
-﻿@{
-    ViewData["Title"] = "Danh sĂ¡ch tĂ i xáº¿";
+@{
+    ViewData["Title"] = "Tài xế & Đội xe";
 }
-<div class="container py-4">
-    <h2 class="text-dark mb-4">Danh SĂ¡ch TĂ i Xáº¿ & Äá»™i Xe</h2>
-    <div class="row g-3">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm text-center py-4">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Nguyá»…n VÄƒn TĂ i</h5>
-                    <p class="text-primary mb-1">Xe táº£i 8 Táº¥n (29C-998.22)</p>
-                    <p class="text-success fs-7 mb-3"><i class="bi bi-circle-fill"></i> Äang giao hĂ ng</p>
-                    <button class="btn btn-sm btn-outline-primary">LiĂªn há»‡ tĂ i xáº¿</button>
-                </div>
+
+<div class="row g-3">
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm p-4 d-flex flex-row justify-content-between align-items-center">
+            <div>
+                <h2 class="text-dark mb-1 font-weight-bold"><i class="bi bi-people text-primary me-2"></i>Danh Sách Tài Xế & Đội Xe</h2>
+                <p class="text-muted mb-0">Quản lý danh sách tài xế vận chuyển, phương tiện đăng ký và phân lịch trình chuyến đi.</p>
             </div>
+            <button class="btn btn-sm btn-primary">+ Thêm Tài Xế</button>
         </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm text-center py-4">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Tráº§n VÄƒn Xe</h5>
-                    <p class="text-primary mb-1">Xe Container (51D-112.90)</p>
-                    <p class="text-secondary fs-7 mb-3"><i class="bi bi-circle-fill"></i> Äang nghá»‰</p>
-                    <button class="btn btn-sm btn-outline-primary">LiĂªn há»‡ tĂ i xáº¿</button>
+    </div>
+
+    <!-- Drivers Table -->
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0" id="driversTable" style="font-size: 0.85rem;">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Họ Tên</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Số GPLX</th>
+                                <th>Hạng Bằng</th>
+                                <th>Xe Gán</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center fw-bold me-2" style="width: 32px; height: 32px;">A</div>
+                                        <div>
+                                            <span class="fw-bold d-block">Nguyễn Văn A</span>
+                                            <small class="text-muted">ID: DRV-001</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>0901234567</td>
+                                <td>GPLX-882193</td>
+                                <td><span class="badge bg-secondary">FC</span></td>
+                                <td>29C-998.22</td>
+                                <td><span class="badge bg-success">Đang chạy chuyến</span></td>
+                                <td>
+                                    <button class="btn btn-xs btn-outline-primary"><i class="bi bi-eye"></i> Chi tiết</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-success rounded-circle text-white d-flex align-items-center justify-content-center fw-bold me-2" style="width: 32px; height: 32px;">B</div>
+                                        <div>
+                                            <span class="fw-bold d-block">Trần Văn B</span>
+                                            <small class="text-muted">ID: DRV-002</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>0909876543</td>
+                                <td>GPLX-771129</td>
+                                <td><span class="badge bg-secondary">C</span></td>
+                                <td>51D-882.11</td>
+                                <td><span class="badge bg-info text-dark">Rảnh rỗi (Online)</span></td>
+                                <td>
+                                    <button class="btn btn-xs btn-outline-primary"><i class="bi bi-eye"></i> Chi tiết</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
