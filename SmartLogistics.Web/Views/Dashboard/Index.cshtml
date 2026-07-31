@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Dashboard Tá»•ng Quan";
+}
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-dark font-weight-bold">Báº£ng Äiá»u Khiá»ƒn Há»‡ Thá»‘ng</h2>
+        <span class="badge bg-primary px-3 py-2">Thá»i gian thá»±c</span>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #4f46e5, #6366f1);">
+                <div class="card-body">
+                    <h6>Tá»•ng váº­n Ä‘Æ¡n</h6>
+                    <h3>1,250 <small class="fs-6 text-light">+12%</small></h3>
+                    <p class="mb-0 text-white-50 fs-7">Cáº­p nháº­t 5 phĂºt trÆ°á»›c</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                <div class="card-body">
+                    <h6>TĂ i xáº¿ hoáº¡t Ä‘á»™ng</h6>
+                    <h3>45 <small class="fs-6 text-light">Äang cháº¡y</small></h3>
+                    <p class="mb-0 text-white-50 fs-7">Tá»•ng sá»‘ xe: 50</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                <div class="card-body">
+                    <h6>ÄÆ¡n hoĂ n thĂ nh</h6>
+                    <h3>11,200 <small class="fs-6 text-light">Trong thĂ¡ng</small></h3>
+                    <p class="mb-0 text-white-50 fs-7">Tá»· lá»‡ Ä‘Ăºng giá»: 96.5%</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-white" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                <div class="card-body">
+                    <h6>Cáº£nh bĂ¡o sá»± cá»‘</h6>
+                    <h3>3 <small class="fs-6 text-light">Chá» xá»­ lĂ½</small></h3>
+                    <p class="mb-0 text-white-50 fs-7">Sá»± cá»‘ thá»i tiáº¿t & káº¹t xe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts / Lists -->
+    <div class="row g-3">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-dark">Váº­n ÄÆ¡n Má»›i Nháº¥t</h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>MĂ£ Váº­n ÄÆ¡n</th>
+                                    <th>KhĂ¡ch HĂ ng</th>
+                                    <th>Äiá»ƒm Äáº¿n</th>
+                                    <th>Tráº¡ng ThĂ¡i</th>
+                                    <th>HĂ nh Äá»™ng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#SH-9831</strong></td>
+                                    <td>CĂ´ng ty TNHH HĂ¹ng PhĂ¡t</td>
+                                    <td>HĂ  Ná»™i</td>
+                                    <td><span class="badge bg-warning text-dark">Äang giao</span></td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Chi tiáº¿t</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#SH-9830</strong></td>
+                                    <td>Beta Logistics</td>
+                                    <td>TP. Há»“ ChĂ­ Minh</td>
+                                    <td><span class="badge bg-success">ÄĂ£ hoĂ n thĂ nh</span></td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Chi tiáº¿t</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-dark">Hiá»‡u Suáº¥t Kho BĂ£i</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between fs-7 mb-1">
+                            <span>Kho HĂ  Ná»™i</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between fs-7 mb-1">
+                            <span>Kho TP.HCM</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-info" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
